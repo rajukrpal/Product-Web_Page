@@ -1,0 +1,12 @@
+# Bu bir yorum satırıdır ve dikkate alınmaz
+
+# Node.js için oluşturulan modül ve bağımlılıkları içeren klasörü yoksay
+node_modules/
+
+# Sistem tarafından oluşturulan dosyaları yoksay
+.DS_Store
+
+# Özel konfigürasyon dosyalarını yoksay
+config.js
+
+# vs. gibi diğer özel dosyaları ve klasörleri yoksayabilirsiniz

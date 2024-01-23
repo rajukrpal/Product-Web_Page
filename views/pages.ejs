@@ -1,0 +1,149 @@
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/css/bootstrap-icons.css">
+      <link rel="stylesheet" href="/stylesheets/css/admin-style.css">
+      
+
+      <title>Hello, world!</title>
+   </head>
+   <body>
+      <header class="navbar navbar-expand-lg navbar-light">
+         <div class="container-fluid">
+            <a class="navbar-brand text-white ml-4" href="/admin/"><b>Teach Coders</b></a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+               <div class="mr-5">
+                  <ul class="navbar-nav mr-auto mr-0">
+                     <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Login / Logout</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+               <aside>
+                  <nav class="sidebar py-2 mb-4">
+                      <ul class="nav flex-column" id="nav_accordion">                      
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item1" href="#"> Pages <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item1" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/pages">All Pages </a></li>
+                              <li><a class="nav-link" href="/admin/pages/add-pages/">Add Pages </a></li>
+                                   
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item2" href="#"> Category <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item2" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/category/">All Category </a></li>
+                              <li><a class="nav-link" href="/admin/category/add-category/">Add Category </a></li>               
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item3" href="#"> Products <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item3" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/products/">All Products</a></li>
+                              <li><a class="nav-link" href="/admin/products/add-products/">Add Products </a></li>              
+                           </ul>
+                        </li>                     
+                     </ul>
+
+                  </nav>
+               </aside>
+            </div>
+            <div class="col-lg-10">
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1>All Pages</h1>
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Photo</th>
+                        <th>Page_Url</th>
+                        <th>Page_Meta_Description</th>
+                        <th>Page_Meta_Keyword</th>
+                        <th>Page_Heading</th>
+                        <th>Page_Details</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <% data.forEach(function(item) { %>
+                        <tr>
+                           <td><img src="/upload/<%=item.Page_Photo %>" alt="Error" style="width: 100%;"> </td>
+                           <td><%= item.Page_Url %></td>
+                           <td><%= item.Page_Meta_Description %></td>
+                           <td><%= item.Page_Meta_Keyword %></td>
+                           <td><%= item.Page_Heading %></td>
+                           <td><%= item.Page_Details %></td>
+                           <td>
+                              <a class="btn btn-primary" href="/admin/pages/edit-pages">Edit</a>                     
+                           </td>
+                           <td>
+                           <form style="display: inline;" action="/delete/raj k?_method=DELETE" method="POST">
+                              <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                           </form>
+                        </td>
+                        </tr>
+                      <% }); %>
+
+                    
+
+                     <!-- <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>
+                           <a class="btn btn-primary" href="/admin/pages/edit-pages">Edit</a>                     
+                           <td>
+                              <form style="display: inline;" action="/delete/raj k?_method=DELETE" method="POST">
+                                 <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                              </form>
+                           </td>
+                        </td>
+                     </tr> -->
+                  
+                  </tbody>
+               </table>
+                 
+
+                 <center> <br> <a class="btn btn-success btn-md" href="/admin/pages/add-pages/">Add More Pages</a> </center>
+       
+
+              <!-- end your content here -->
+             </div>
+             
+            </div>
+         </div>
+      </div>
+      <script src="/javascripts/js/bootstrap.bundle.min.js"></script>
+      <script src="/javascripts/js/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/javascripts/js/datatables.min.css"/>
+      <script type="text/javascript" src="/javascripts/js/datatables.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+             $('#dataTable').DataTable();
+              rowReorder: true
+           });
+      </script>
+   </body>
+</html>
+<script type="modules">
+   re resposnseData 
+</script>

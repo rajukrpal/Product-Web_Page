@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/css/bootstrap-icons.css">
+      <link rel="stylesheet" href="/stylesheets/css/admin-style.css">
+
+      <title>Hello, world!</title>
+   </head>
+   <body>
+      <header class="navbar navbar-expand-lg navbar-light">
+         <div class="container-fluid">
+            <a class="navbar-brand text-white ml-4" href="/admin/"><b>Teach Coders</b></a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+               <div class="mr-5">
+                  <ul class="navbar-nav mr-auto mr-0">
+                     <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Login / Logout</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+               <aside>
+                  <nav class="sidebar py-2 mb-4">
+
+                     <ul class="nav flex-column" id="nav_accordion">                      
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item1" href="#"> Pages <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item1" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/pages">All Pages </a></li>
+                              <li><a class="nav-link" href="/admin/pages/edit-pages/">Add Pages </a></li>
+                                   
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item2" href="#"> Category <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item2" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/category/">All Category </a></li>
+                              <li><a class="nav-link" href="/admin/category/add-category/">Add Category </a></li>               
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item3" href="#"> Products <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item3" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/products/">All Products</a></li>
+                              <li><a class="nav-link" href="/admin/products/add-products/">Add Products </a></li>              
+                           </ul>
+                        </li>                        
+                     </ul>
+
+                  </nav>
+               </aside>
+            </div>
+            <div class="col-lg-10">
+
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+               <h1 class="mb-2 mt-2">Edit Page</h1>
+    
+    <form method="post" action="/admin/pages/edit-pages">
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">  
+        <div class="col col-lg-2"><label class="form-label">URL</label></div>
+        <div class="col"><input type="text" name ="Page_Url" class="form-control" placeholder="Page Url"></div>
+      </div>
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">           
+          <div class="col col-lg-2"><label class="form-label">Meta Description</label></div>
+          <div class="col"><input type="text" name ="Page_Meta_Description" class="form-control" placeholder="Page Meta Description"></div>
+      </div>
+
+      <div class="mb-3 mt-3 row g-9 align-items-center">
+        <div class="col col-lg-2"><label class="form-label">Meta Keyword</label></div>
+        <div class="col"><input type="text" name ="Page_Meta_Keyword" class="form-control" placeholder="Page Meta Keyword"></div>
+      </div>
+      
+      <div class="mb-3 mt-3 row g-9 align-items-center">
+        <div class="col col-lg-2"><label class="form-label">h1</label></div>
+        <div class="col"><input type="text" name ="Page_Heading" class="form-control" placeholder="Page Heading"></div>
+      </div>
+      
+      <div class="mb-3 mt-3 row g-9 align-items-center"> 
+        <div class="col col-lg-2"><label class="form-label">Photo</label></div>
+        <div class="col"><input type="file" name="Page_Photo" class="form-control"></div>
+      </div>
+      
+      <div class="mb-3 mt-3 row g-9 align-items-center">
+        <div class="col col-lg-2"><label class="form-label">Page Details</label></div>
+        <div class="col"><textarea rows="10" class="editor form-control Page_Details" name="Page_Details" placeholder="Page Details"></textarea></div>
+      </div>
+
+      <div class="mb-5 mt-3 align-items-center text-center"> 
+           <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+
+      <script src="/javascripts/js/bootstrap.bundle.min.js"></script>
+      <script src="/javascripts/js/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/javascripts/js/datatables.min.css"/>
+      <script type="text/javascript" src="/javascripts/js/datatables.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+             $('#dataTable').DataTable();
+              rowReorder: true
+           });
+      </script>
+      
+   </body>
+</html>
