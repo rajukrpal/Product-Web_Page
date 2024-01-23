@@ -13,8 +13,19 @@ const storage = multer.diskStorage({
     cb(null,file.originalname)
   }
 })
-const upload = multer({storage:storage})
 
+const upload = multer({
+  fileFilter:function(req,file,cb){
+    if(file.mimetype == 'image/jpg' ||file.mimetype == 'image/png' || file.mimetype == 'image/gif'){
+        cb(null,true);
+    }
+    else{
+        cb(null,false);
+        return cb(new Error('Only PNG , JPG And gif Image uploaded !'));
+    }
+  },
+  storage: storage
+})
 
 /* GET home page. */
 
@@ -32,7 +43,7 @@ router.get('/admin/pages/edit-pages',(req,res)=>{
 })
 
 router.get('/admin/pages',async(req,res)=>{
- const allData = await productModule.find({})
+ const allData = await productModule.find()
   res.render('pages',{data:allData})
 })
 
