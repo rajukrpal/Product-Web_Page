@@ -90,17 +90,15 @@
                            <td><%= item.Page_Heading %></td>
                            <td><%= item.Page_Details %></td>
                            <td>
-                              <a class="btn btn-primary" href="/admin/pages/edit-pages">Edit</a>                     
+                              <a class="btn btn-primary" href="/admin/pages/edit-pages/<%= item.Page_Url %>">Edit</a>                     
                            </td>
                            <td>
-                           <form style="display: inline;" action="/delete/raj k?_method=DELETE" method="POST">
+                           <form style="display: inline;" action="/admin/pages/delete-pages/<%= item.Page_Url%>?_method=DELETE" method="post">
                               <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
                            </form>
                         </td>
                         </tr>
                       <% }); %>
-
-                    
 
                      <!-- <tr>
                         <td> </td>
