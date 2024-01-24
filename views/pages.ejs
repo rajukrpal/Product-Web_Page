@@ -88,7 +88,7 @@
                            <td><%= item.Page_Meta_Description %></td>
                            <td><%= item.Page_Meta_Keyword %></td>
                            <td><%= item.Page_Heading %></td>
-                           <td><%= item.Page_Details %></td>
+                           <td><%= item.Page_Details.slice(0,50) %></td>
                            <td>
                               <a class="btn btn-primary" href="/admin/pages/edit-pages/<%= item.Page_Url %>">Edit</a>                     
                            </td>
@@ -142,6 +142,3 @@
       </script>
    </body>
 </html>
-<script type="modules">
-   re resposnseData 
-</script>

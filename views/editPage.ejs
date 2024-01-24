@@ -98,7 +98,7 @@
       
       <div class="mb-3 mt-3 row g-9 align-items-center">
         <div class="col col-lg-2"><label class="form-label">Page Details</label></div>
-        <div class="col"><textarea rows="10" class="editor form-control Page_Details" name="Page_Details"  placeholder="Page Details"><%= item ? item.Page_Details : '' %></textarea></div>
+        <div class="col"><textarea rows="10" class="editor form-control Page_Details" id="editor" name="Page_Details"  placeholder="Page Details"><%= item ? item.Page_Details : '' %> <button onclick="getContent()">Get Content</button></textarea></div>
       </div>
 
       <div class="mb-5 mt-3 align-items-center text-center"> 
@@ -125,4 +125,17 @@
       </script>
       
    </body>
+<!-- text area ke liye cdn path  START -->
+   <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+   <script>
+      CKEDITOR.replace('editor');
+   </script>
+   
+   <script>
+      function getContent() {
+         var editorContent = CKEDITOR.instances.editor.getData();
+         console.log(editorContent);
+      }
+   </script>
+   <!-- text area ke liye cdn path END -->
 </html>
