@@ -15,17 +15,17 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({
-  fileFilter:function(req,file,cb){
-    if(file.mimetype == 'image/jpg' ||file.mimetype == 'image/png' || file.mimetype == 'image/gif'){
-        cb(null,true);
-    }
-    else{
-        cb(null,false);
-        return cb(new Error('Only PNG , JPG And gif Image uploaded !'));
+  fileFilter: function(req, file, cb) {
+    if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' || file.mimetype == 'image/gif') {
+      return cb(null, true);
+    } else {
+      cb(null, false);
+      return cb(new Error('Only PNG, JPG, and GIF images are allowed.'));
     }
   },
   storage: storage
-})
+});
+
 
 /* GET home page. */
 
