@@ -28,8 +28,10 @@ const upload = multer({
 
 /* GET home page. */
 
-router.get('/admin', function(req, res, next) {
-  res.render('admin');
+router.get('/admin', async(req, res)=> {
+  const userLength = await productModule.find({}).count()
+  res.render('admin',{userLength});
+  console.log(userLength)
 });
 
 router.get('/', function(req, res, next) {
